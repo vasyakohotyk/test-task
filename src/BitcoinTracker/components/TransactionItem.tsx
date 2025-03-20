@@ -18,10 +18,10 @@ const TransactionItem: React.FC<{ transaction: Transaction }> = ({ transaction }
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         border: '1px solid #e0e0e0',
         transition: 'transform 0.3s ease',
-        wordWrap: 'break-word', // Для розриву довгих слів
-        overflow: 'hidden', // Текст не виходить за межі
-        maxWidth: '100%', // Не перевищує ширину батьківського елементу
-        boxSizing: 'border-box', // Коректний розрахунок ширини та висоти
+        wordWrap: 'break-word', 
+        overflow: 'hidden', 
+        maxWidth: '100%', 
+        boxSizing: 'border-box',
       }}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 1.00 }}

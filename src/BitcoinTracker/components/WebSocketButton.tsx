@@ -1,4 +1,4 @@
-// src/components/WebSocketButton.tsx
+
 import React from 'react';
 import { WebSocketButtonProps } from '../utils/types';
 
@@ -7,7 +7,7 @@ const WebSocketButton: React.FC<WebSocketButtonProps> = ({ onClick, label, disab
     <button
       onClick={onClick}
       style={{
-        padding: '10px',
+        padding: '10px 15px',
         background: backgroundColor,
         color: 'white',
         border: 'none',

@@ -1,4 +1,4 @@
-// src/components/DraggableBlock.tsx
+
 import React from "react";
 import { Rnd } from "react-rnd";
 import { DraggableBlockProps } from "../utils/constants";
@@ -44,7 +44,6 @@ const DraggableBlock: React.FC<DraggableBlockProps> = ({
       }}
       onClick={() => bringToFront(block.id)}
     >
-      {/* Відображаємо індекс по центру */}
       <span style={{ pointerEvents: "none", fontSize: "1.5rem" }}>
         {block.id}
       </span>

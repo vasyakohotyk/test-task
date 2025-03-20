@@ -1,6 +1,6 @@
-// src/utils/useWebSocket.ts
+
 import { useState, useRef } from 'react';
-import { Transaction } from './types';
+import { Transaction } from '../utils/types';
 export const useWebSocket = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [transactions, setTransactions] = useState<Transaction[]>([]);

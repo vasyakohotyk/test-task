@@ -1,7 +1,7 @@
 import React from 'react';
 import WebSocketButton from '../components/WebSocketButton';
 import TransactionList from '../components/TransactionList';
-import { useWebSocket } from '../utils/useWebSocket';
+import { useWebSocket } from '../hooks/useWebSocket';
 
 const BitcoinTracker: React.FC = () => {
   const { isConnected, transactions, total, connectWebSocket, disconnectWebSocket, resetWebSocket } = useWebSocket();
@@ -53,14 +53,14 @@ const BitcoinTracker: React.FC = () => {
             onClick={connectWebSocket}
             label="Start"
             disabled={isConnected}
-            backgroundColor="#4caf50" // Green
+            backgroundColor="#4caf50" 
             
           />
           <WebSocketButton
             onClick={disconnectWebSocket}
             label="Stop"
             disabled={!isConnected}
-            backgroundColor="#f44336" // Red
+            backgroundColor="#f44336" 
             
           />
           <WebSocketButton
@@ -69,7 +69,7 @@ const BitcoinTracker: React.FC = () => {
             }}
             label="Reset"
             disabled={false}
-            backgroundColor="#ff9500" // Gray
+            backgroundColor="#ff9500"
            
           />
         </div>

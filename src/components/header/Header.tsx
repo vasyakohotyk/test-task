@@ -16,7 +16,6 @@ const Header: React.FC = () => {
     checkMobileView();
     window.addEventListener('resize', checkMobileView);
 
-    // Закриття меню при зміні ширини екрану на більше за 800px
     if (window.innerWidth > 800) {
       setMenuOpen(false);
     }
@@ -33,7 +32,6 @@ const Header: React.FC = () => {
     navigate(route);
   };
 
-  // Функція для визначення, чи є активний маршрут
   const isActiveRoute = (route: string) => location.pathname === route;
 
   return (
@@ -58,16 +56,16 @@ const Header: React.FC = () => {
           <Link to="/interactive" 
             style={{
               marginRight: '30px',
-              color: isActiveRoute('/interactive') ? '#f1c40f' : '#fff',  // Стиль для вибраного роута
+              color: isActiveRoute('/interactive') ? '#f1c40f' : '#fff', 
               textDecoration: 'none',
             }} 
             onClick={() => handleRouteChange('/interactive')}>
-            Interactive Workspace
+            Interactive Workspace 
           </Link>
           <Link to="/bitcoin" 
             style={{
               marginRight: '30px',
-              color: isActiveRoute('/bitcoin') ? '#f1c40f' : '#fff',  // Стиль для вибраного роута
+              color: isActiveRoute('/bitcoin') ? '#f1c40f' : '#fff',  
               textDecoration: 'none',
             }} 
             onClick={() => handleRouteChange('/bitcoin')}>
@@ -155,7 +153,7 @@ const Header: React.FC = () => {
               </Link>
               <Link to="/bitcoin" 
                 style={{
-                  color: isActiveRoute('/bitcoin') ? '#f1c40f' : '#fff',  // Стиль для вибраного роута
+                  color: isActiveRoute('/bitcoin') ? '#f1c40f' : '#fff',
                   textDecoration: 'none',
                   display: 'block',
                 }} 
