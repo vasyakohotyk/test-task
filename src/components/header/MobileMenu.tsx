@@ -26,20 +26,25 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
         opacity: 0.9,
         textAlign: "center",
         zIndex: 1000,
+        padding: "20px",
       }}
     >
       <div
-        style={{
+        style={{ 
           position: "absolute",
           top: "20px",
-          right: "20px",
+          right: "80px", 
           cursor: "pointer",
+          fontSize: "30px",
+          color: "#fff", 
+          fontWeight: "bold",
+          zIndex: 2000, 
         }}
         onClick={onClose}
       >
         ✖
       </div>
-      <div style={{ marginTop: "100px" }}>
+      <div style={{ marginTop: "80px", display: "flex", flexDirection: "column", gap: "20px" }}>
         <NavLinks onClick={onClose} />
       </div>
     </motion.div>
