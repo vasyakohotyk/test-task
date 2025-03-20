@@ -1,9 +1,9 @@
-import React, { Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/header/Header'; 
 import Loader from './components/Loader/Loader';
 
-const InteractiveWorkspace = lazy(() => import('./BlockDrag&Drop/pages/FreeMoveWorkspace'));
+const InteractiveWorkspace = lazy(() => import('./InteractiveWorkSpace/pages/FreeMoveWorkspace'));
 const BitcoinTracker = lazy(() => import('./BitcoinTracker/pages/BitcoinTracker'));
 
 
