@@ -143,7 +143,7 @@ const Header: React.FC = () => {
             <div style={{ marginTop: '100px' }}>
               <Link to="/interactive" 
                 style={{
-                  color: isActiveRoute('/interactive') ? '#f1c40f' : '#fff', // Стиль для вибраного роута
+                  color: isActiveRoute('/interactive') ? '#f1c40f' : '#fff', 
                   textDecoration: 'none',
                   marginBottom: '20px',
                   display: 'block',
