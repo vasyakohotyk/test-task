@@ -1,4 +1,4 @@
-import { BounceLoader, RingLoader } from "react-spinners";
+import { RingLoader } from "react-spinners";
 
 const Loader: React.FC = () => {
   return (
