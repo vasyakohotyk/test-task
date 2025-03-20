@@ -9,17 +9,16 @@ const BitcoinTracker: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleStartClick = () => {
-    setIsLoading(true); // Починаємо завантаження
+    setIsLoading(true);
     connectWebSocket();
   };
 
   const handleTransactionUpdate = () => {
     if (transactions.length > 0) {
-      setIsLoading(false); // Зупиняємо лоадер, коли з'являються транзакції
+      setIsLoading(false);
     }
   };
 
-  // Викликаємо handleTransactionUpdate щоразу, коли транзакції змінюються
   React.useEffect(() => {
     handleTransactionUpdate();
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -31,7 +30,7 @@ const BitcoinTracker: React.FC = () => {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '40px',
+      padding: '30px 40px',
       color: '#333',
     }}>
       <div style={{
