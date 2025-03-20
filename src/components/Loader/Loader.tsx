@@ -1,9 +1,9 @@
-import { BounceLoader } from "react-spinners";
+import { BounceLoader, RingLoader } from "react-spinners";
 
 const Loader: React.FC = () => {
   return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-      <BounceLoader color="#3498db" size={60} />
+      <RingLoader color="#3498db" size={60} />
     </div>
   );
 };

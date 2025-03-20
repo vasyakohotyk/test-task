@@ -5,7 +5,7 @@ const ResetButton: React.FC<ResetButtonProps> = ({ resetLayout }) => (
   <button
     onClick={resetLayout}
     style={{
-      padding: "8px 16px",
+      padding: "12px 20px",
       backgroundColor: "#3498db",
       color: "white",
       borderRadius: "4px",

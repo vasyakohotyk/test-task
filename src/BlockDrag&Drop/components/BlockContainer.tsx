@@ -1,13 +1,7 @@
 import React from "react";
 import DraggableBlock from "./DraggableBlock";
-import { Block } from "../utils/types";
+import { BlockContainerProps } from "../utils/constants";
 
-interface BlockContainerProps {
-  blocks: Block[];
-  updateBlock: (id: string, newData: Partial<Block>) => void;
-  removeBlock: (id: string) => void;
-  bringToFront: (id: string) => void;
-}
 
 const BlockContainer: React.FC<BlockContainerProps> = ({ blocks, updateBlock, removeBlock, bringToFront }) => {
   return (

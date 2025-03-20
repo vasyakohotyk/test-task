@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import WebSocketButton from '../components/WebSocketButton';
 import TransactionList from '../components/TransactionList';
 import { useWebSocket } from '../hooks/useWebSocket';
+import Loader from '../components/Loader';
 
 const BitcoinTracker: React.FC = () => {
   const { isConnected, transactions, total, connectWebSocket, disconnectWebSocket, resetWebSocket } = useWebSocket();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const handleStartClick = () => {
+    setIsLoading(true); // Починаємо завантаження
+    connectWebSocket();
+  };
+
+  const handleTransactionUpdate = () => {
+    if (transactions.length > 0) {
+      setIsLoading(false); // Зупиняємо лоадер, коли з'являються транзакції
+    }
+  };
+
+  // Викликаємо handleTransactionUpdate щоразу, коли транзакції змінюються
+  React.useEffect(() => {
+    handleTransactionUpdate();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [transactions]);
 
   return (
     <div style={{
@@ -13,7 +32,6 @@ const BitcoinTracker: React.FC = () => {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '40px',
-     
       color: '#333',
     }}>
       <div style={{
@@ -50,31 +68,32 @@ const BitcoinTracker: React.FC = () => {
           marginBottom: '30px',
         }}>
           <WebSocketButton
-            onClick={connectWebSocket}
+            onClick={handleStartClick}
             label="Start"
             disabled={isConnected}
-            backgroundColor="#4caf50" 
-            
+            backgroundColor="#4caf50"
           />
           <WebSocketButton
             onClick={disconnectWebSocket}
             label="Stop"
             disabled={!isConnected}
-            backgroundColor="#f44336" 
-            
+            backgroundColor="#f44336"
           />
           <WebSocketButton
-            onClick={() => {
-             resetWebSocket();
-            }}
+            onClick={() => resetWebSocket()}
             label="Reset"
             disabled={false}
             backgroundColor="#ff9500"
-           
           />
         </div>
 
-        {transactions.length > 0 && <TransactionList transactions={transactions} /> }
+        {isLoading && (
+          <div style={{ fontSize: '1.5rem', color: '#555', marginBottom: '20px' }}>
+            <Loader/>
+          </div>
+        )}
+
+        {transactions.length > 0 && <TransactionList transactions={transactions} />}
       </div>
     </div>
   );

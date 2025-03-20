@@ -19,5 +19,12 @@ export interface DraggableBlockProps {
 export interface ResetButtonProps {
     resetLayout: () => void;
   }
+
+export interface BlockContainerProps {
+  blocks: Block[];
+  updateBlock: (id: string, newData: Partial<Block>) => void;
+  removeBlock: (id: string) => void;
+  bringToFront: (id: string) => void;
+}
   
 export {}
